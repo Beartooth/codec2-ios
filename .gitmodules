@@ -1,0 +1,3 @@
+[submodule "codec2-ios/codec2"]
+	path = codec2-ios/codec2
+	url = https://github.com/Beartooth/codec2.git
