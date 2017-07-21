@@ -129,6 +129,8 @@
 		1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.0.4.dylib; sourceTree = "<group>"; };
 		1F15D40C1F21756100FA5515 /* libcodec2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.dylib; sourceTree = "<group>"; };
 		1F15D4101F217BFA00FA5515 /* codec2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F7085A61F22BB83006A6288 /* codec2_compile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codec2_compile.h; sourceTree = "<group>"; };
+		1F7085A71F22BB83006A6288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
 		1FEF95021F202CDF009A3D58 /* codec2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = codec2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEF95051F202CDF009A3D58 /* codec2-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-ios.h"; sourceTree = "<group>"; };
@@ -779,11 +781,21 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		1F7085A51F22BB83006A6288 /* codec2_compile */ = {
+			isa = PBXGroup;
+			children = (
+				1F7085A61F22BB83006A6288 /* codec2_compile.h */,
+				1F7085A71F22BB83006A6288 /* Info.plist */,
+			);
+			path = codec2_compile;
+			sourceTree = "<group>";
+		};
 		1FEF94F81F202CDF009A3D58 = {
 			isa = PBXGroup;
 			children = (
 				1FEF95041F202CDF009A3D58 /* codec2-ios */,
 				1FEF950F1F202CDF009A3D58 /* codec2-iosTests */,
+				1F7085A51F22BB83006A6288 /* codec2_compile */,
 				1FEF95031F202CDF009A3D58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1854,14 +1866,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -1902,13 +1917,16 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};

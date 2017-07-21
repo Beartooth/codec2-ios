@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cd $SRCROOT/codec2-ios&#10;./build_codec2.sh">
+               scriptText = "cd $SRCROOT/codec2-ios&#10;env -i ./build_codec2.sh">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
