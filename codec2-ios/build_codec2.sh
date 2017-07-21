@@ -79,7 +79,7 @@ function verifycmake() {
 # 	exit 1
 # fi
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 printenv
 
 PROJECT_DIR=`pwd`
