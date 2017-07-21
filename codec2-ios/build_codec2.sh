@@ -88,11 +88,9 @@ CODEC_2_SIMULATOR_BUILD=$PROJECT_DIR/codec2_simulator_build
 CODEC_2_OUTPUT=$PROJECT_DIR/lib
 echoorange "Codec 2 path: ${CODEC_2_PATH}"
 
-# Update codec2 submodule if necessary
-if [ ! -f "${CODEC_2_PATH}/CMakeLists.txt" ]; then
-	echoorange "Updating codec submodule..."
-	git submodule update --init --recursive
-fi
+# Update codec2 submodule if necessary'
+git submodule init
+git submodule update --init --recursive
 
 # Check toolchains
 verifyclang
