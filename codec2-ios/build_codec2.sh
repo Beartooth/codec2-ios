@@ -91,6 +91,7 @@ echoorange "Codec 2 path: ${CODEC_2_PATH}"
 # Update codec2 submodule if necessary'
 git submodule init
 git submodule update --init --recursive
+cd $CODEC_2_PATH && git checkout cross-compile-support
 
 # Check toolchains
 verifyclang
