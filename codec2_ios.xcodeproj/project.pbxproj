@@ -130,10 +130,6 @@
 		1F15D40C1F21756100FA5515 /* libcodec2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.dylib; sourceTree = "<group>"; };
 		1F15D4101F217BFA00FA5515 /* codec2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
-		1FE2C9271F21AB84004DF7D5 /* codec_2_ios_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codec_2_ios_config.h; sourceTree = "<group>"; };
-		1FE2C9281F21AB84004DF7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE2C9351F21AD89004DF7D5 /* a_config_libs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = a_config_libs.h; sourceTree = "<group>"; };
-		1FE2C9361F21AD89004DF7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEF95021F202CDF009A3D58 /* codec2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = codec2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEF95051F202CDF009A3D58 /* codec2-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-ios.h"; sourceTree = "<group>"; };
 		1FEF95061F202CDF009A3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -783,31 +779,11 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		1FE2C9261F21AB84004DF7D5 /* codec_2_ios_config */ = {
-			isa = PBXGroup;
-			children = (
-				1FE2C9271F21AB84004DF7D5 /* codec_2_ios_config.h */,
-				1FE2C9281F21AB84004DF7D5 /* Info.plist */,
-			);
-			path = codec_2_ios_config;
-			sourceTree = "<group>";
-		};
-		1FE2C9341F21AD89004DF7D5 /* a_config_libs */ = {
-			isa = PBXGroup;
-			children = (
-				1FE2C9351F21AD89004DF7D5 /* a_config_libs.h */,
-				1FE2C9361F21AD89004DF7D5 /* Info.plist */,
-			);
-			path = a_config_libs;
-			sourceTree = "<group>";
-		};
 		1FEF94F81F202CDF009A3D58 = {
 			isa = PBXGroup;
 			children = (
 				1FEF95041F202CDF009A3D58 /* codec2-ios */,
 				1FEF950F1F202CDF009A3D58 /* codec2-iosTests */,
-				1FE2C9261F21AB84004DF7D5 /* codec_2_ios_config */,
-				1FE2C9341F21AD89004DF7D5 /* a_config_libs */,
 				1FEF95031F202CDF009A3D58 /* Products */,
 			);
 			sourceTree = "<group>";

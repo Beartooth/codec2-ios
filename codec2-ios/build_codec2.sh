@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Copyright © 2017 Jefferson Jones. All rights reserved.
 
 # This program is free software; you can redistribute it and/or modify
@@ -26,23 +27,23 @@ NC='\033[0m'
 SPIN='-\|/'
 
 function echogreen() {
-	echo -e "${GREEN} - $1${NC}"
+	echo -e "${GREEN}$1${NC}"
 }
 
 function echored() {
-	echo -e "${RED} - $1${NC}"
+	echo -e "${RED}$1${NC}"
 }
 
 function echoorange() {
-	echo -e "${ORANGE} - $1${NC}"
+	echo -e "${ORANGE}$1${NC}"
 }
 
 function echoorangen() {
-	echo -ne "${ORANGE} - $1${NC}"
+	echo -ne "${ORANGE}$1${NC}"
 }
 
 function verifyclang() {
-	echo -e -e "${ORANGE} - Checking Clang installation...${NC}"
+	echoorange "Checking Clang installation"
 	if hash clang 2>/dev/null; then
 		clang --version
 	else
@@ -58,7 +59,7 @@ function verifyclang() {
 }
 
 function verifycmake() {
-	echo -e "${ORANGE} - Checking CMake installation...${NC}"
+	echoorange "Checking CMake installation"
 	if hash cmake 2>/dev/null; then
 		cmake /V
 	else
@@ -101,22 +102,18 @@ verifycmake
 export CC=clang
 export CXX=clang++
 
-# Create native build dir if needed
-if [ ! -d "${CODEC_2_NATIVE_BUILD}" ]; then
-	echoorange "Creating native build directory"
-	mkdir $CODEC_2_NATIVE_BUILD
-else
-	echoorange "Native build directory already present"
-fi
-echoorange "Native build directory: ${CODEC_2_NATIVE_BUILD}"
-cd $CODEC_2_NATIVE_BUILD
 
-# Build codec2 natively
-echoorange "Codec 2 (native): Generating build system..."
-cmake ../codec2
-echoorange "Codec 2 (native): Building code generators..."
-make generate_codebook genlspdtcb
-echogreen "Codec 2 (native): Finished"
+################################################
+# Build native codebook generators for codec 2 #
+################################################
+
+# Build codebook targets
+mkdir -p $CODEC_2_NATIVE_BUILD && cd $CODEC_2_NATIVE_BUILD
+echoorange "native: Build directory: ${CODEC_2_NATIVE_BUILD}"
+echoorange "native: Generating build system..."
+cmake ../codec2 > cmake_native.log 2>&1
+echoorange "native: Building code generators..."
+make generate_codebook genlspdtcb > make_native.log 2>&1
 
 
 # Check for codebook generator binaries module
@@ -125,51 +122,62 @@ if [ ! -f "ImportExecutables.cmake" ]; then
 	echored "CMake module for codebook generators was not found, check CMakeOutput.log for more info."
 	exit 1
 fi
-cd $PROJECT_DIR
+echoorange "native: Finished"
+########################
+# Build codec2 for iOS #
+########################
 
-# Create required dirs for iOS
-if [ ! -d "${CODEC_2_IOS_BUILD}" ]; then
-	echoorange "Creating iOS build directory"
-	mkdir $CODEC_2_IOS_BUILD
-fi
-if [ ! -d "${CODEC_2_SIMULATOR_BUILD}" ]; then
-	echoorange "Creating iOS simulator build directory"
-	mkdir $CODEC_2_SIMULATOR_BUILD
-fi
-if [ ! -d "${CODEC_2_OUTPUT}" ]; then
-	echoorange "Creating lib output directory"
-	mkdir $CODEC_2_OUTPUT
-fi
-echoorange "iOS build directory: ${CODEC_2_IOS_BUILD}"
-echoorange "iOS simulator build directory: ${CODEC_2_SIMULATOR_BUILD}"
-echoorange "Library output: ${CODEC_2_OUTPUT}"
+# xcodebuild outputs
+IOS_OS_BIN_OUTPUT=$CODEC_2_IOS_BUILD/src/Release-iphoneos 				# device
+IOS_SIM_BIN_OUTPUT=$CODEC_2_SIMULATOR_BUILD/src/Release-iphonesimulator # simulator
+# Arch libarary paths
+IOS_OS_DYLIBS=$CODEC_2_OUTPUT/os
+IOS_SIM_DYLIBS_i386=$CODEC_2_OUTPUT/simulator/i386
+IOS_SIM_DYLIBS_x86_64=$CODEC_2_OUTPUT/simulator/x86_64
+# Dylib names
+IOS_DYLIB_NAME_NO_V=libcodec2.dylib
+IOS_DYLIB_NAME=libcodec2.0.4.dylib
 
-# Build codec2 for iOS
-cd $CODEC_2_IOS_BUILD
-echoorange "Codec 2 (iOS): Generating build system..."
-cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=OS -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2
-echoorange "Codec 2 (iOS): Building..."
-xcodebuild -quiet -target codec2 install -configuration Release
+# Build for device
+mkdir -p $CODEC_2_IOS_BUILD && cd $CODEC_2_IOS_BUILD
+echoorange "iOS: Build directory: ${CODEC_2_IOS_BUILD}"
+echoorangen "iOS: Generating build system..."
+cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=OS -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2 > cmake_os.log 2>&1
+echoorange "done"
+echoorangen "iOS: Building..."
+xcodebuild -quiet -target codec2 install -configuration Release clean build > os_build.log 2>&1
+echoorange "done"
+mkdir -p $IOS_OS_DYLIBS
+mv $IOS_OS_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_OS_DYLIBS
+mv $IOS_OS_BIN_OUTPUT/$IOS_DYLIB_NAME $IOS_OS_DYLIBS
+echoorange "iOS: Finished"
 
 # Build codec2 for iOS simulator
-cd $CODEC_2_SIMULATOR_BUILD
-echoorange "Codec 2 (iOS simulator): Generating build system..."
-cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=SIMULATOR -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2
-echoorange "Codec 2 (iOS simulator): Building..."
-xcodebuild -quiet -target codec2 install -configuration Release
+mkdir -p $CODEC_2_SIMULATOR_BUILD && cd $CODEC_2_SIMULATOR_BUILD
+echoorange "iOS simulator: Build directory: ${CODEC_2_SIMULATOR_BUILD}"
+echoorangen "iOS simulator: Generating build system..."
+cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=SIMULATOR -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2 > cmake_sim.log 2>&1
+echoorange "done"
+echoorangen "iOS simulator: Building i386..."
+xcodebuild -quiet -target codec2 install -configuration Release clean build ARCHS="i386" > sim_build_i386.log 2>&1
+echoorange "done"
+mkdir -p $IOS_SIM_DYLIBS_i386
+mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_i386
+mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386
+echoorangen "iOS simulator: Building x86_64..."
+xcodebuild -quiet -target codec2 install -configuration Release clean build ARCHS="x86_64" VALID_ARCHS="x86_64" > sim_build_x86_64.log 2>&1
+echoorange "done"
+mkdir -p $IOS_SIM_DYLIBS_x86_64
+mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_x86_64
+mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_x86_64
+echoorange "iOS simulator: Finished"
 
-# combine dylibs, output to lib directory
-CODEC_2_IOS_DYLIB_NO_V=$CODEC_2_IOS_BUILD/src/Release-iphoneos/libcodec2.dylib
-CODEC_2_IOS_DYLIB=$CODEC_2_IOS_BUILD/src/Release-iphoneos/libcodec2.0.4.dylib
-CODEC_2_SIM_DYLIB_NO_V=$CODEC_2_SIMULATOR_BUILD/src/Release-iphonesimulator/libcodec2.dylib
-CODEC_2_SIM_DYLIB=$CODEC_2_SIMULATOR_BUILD/src/Release-iphonesimulator/libcodec2.0.4.dylib
-lipo -output $PROJECT_DIR/lib/libcodec2.dylib -create $CODEC_2_IOS_DYLIB_NO_V $CODEC_2_SIM_DYLIB_NO_V
-lipo -output $PROJECT_DIR/lib/libcodec2.0.4.dylib -create $CODEC_2_IOS_DYLIB $CODEC_2_SIM_DYLIB
-echogreen "Codec 2 (iOS): Finished"
+# Combine dylibs
+echoorangen "Combining binaries..."
+lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_i386/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_x86_64/$IOS_DYLIB_NAME_NO_V -output $CODEC_2_OUTPUT/$IOS_DYLIB_NAME_NO_V
+lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_x86_64/$IOS_DYLIB_NAME -output $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
+echoorange "done"
 
-# Clean up
-echoorange "Removing build directories..."
-rm -rf $CODEC_2_NATIVE_BUILD $CODEC_2_IOS_BUILD $CODEC_2_SIMULATOR_BUILD
 echogreen "Done! You can build the project from Xcode now."
 
 

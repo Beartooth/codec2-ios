@@ -18,18 +18,9 @@ import Foundation
 
 
 /**
- Codec2 - A swift wrapper for the open source speech codec.
+ Codec2 - Wrapper for codec2_* C functions
  
- [David Rowe](http://www.rowetel.com/) originally developed the codec, along with support from other researchers.
- 
- This framework is based on [a fork of the Codec 2 source code](https://github.com/Beartooth/codec2-ios).
- The original source can be found on SVN [here](https://svn.code.sf.net/p/freetel/code/codec2-dev/) and
- on GitHub [here](https://github.com/freedv/codec2)
- 
- Codec 2 has 7 compression modes ranging from 700 bits/s to 3200 bits/s.
- 
- Currently this wrapper only exposes the standard encode and decode functions.
- 
+ This class wraps a native codec state for a given `Bitrate`.
  */
 public class Codec2 {
   
@@ -85,7 +76,7 @@ public class Codec2 {
     }
   }
   
-  private let bitrate: Bitrate
+  public let bitrate: Bitrate
   private let cPtr: OpaquePointer
   
   init?(mode: Bitrate) {
@@ -101,8 +92,7 @@ public class Codec2 {
   /**
    Encodes one voice frame
    
-   - parameter speech:  Speech audio to encode. The length of the buffer should match
-   `samplesPerFrame`.
+   - parameter speech:  Speech audio to encode. The length of the buffer should match `samplesPerFrame`.
    
    - returns: An an encoded voice frame, packed into a byte array.
    */
