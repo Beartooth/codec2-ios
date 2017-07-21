@@ -80,7 +80,6 @@ function verifycmake() {
 # fi
 
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-printenv
 
 PROJECT_DIR=`pwd`
 CMAKE_IOS_TOOLCHAIN=$PROJECT_DIR/toolchain/iOS.cmake
@@ -92,7 +91,9 @@ CODEC_2_OUTPUT=$PROJECT_DIR/lib
 echoorange "Codec 2 path: ${CODEC_2_PATH}"
 
 # Update codec2 submodule if necessary'
+echoorange "Initializing submodules..."
 git submodule init
+echoorange "Updating submodules..."
 git submodule update --init --recursive
 cd $CODEC_2_PATH && git checkout cross-compile-support
 
