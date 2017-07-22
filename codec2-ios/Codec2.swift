@@ -15,7 +15,7 @@
  */
 
 import Foundation
-
+import Codec2Private
 
 /**
  Codec2 - Wrapper for codec2_* C functions
@@ -79,7 +79,7 @@ public class Codec2 {
   public let bitrate: Bitrate
   private let cPtr: OpaquePointer
   
-  init?(mode: Bitrate) {
+  public init?(mode: Bitrate) {
     guard let instance = codec2_create(mode.rawValue) else {return nil}
     self.cPtr = instance
     self.bitrate = mode

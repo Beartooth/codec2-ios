@@ -15,9 +15,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "1FEF95011F202CDF009A3D58"
-                     BuildableName = "codec2_ios.framework"
-                     BlueprintName = "codec2_ios"
-                     ReferencedContainer = "container:codec2_ios.xcodeproj">
+                     BuildableName = "Codec2.framework"
+                     BlueprintName = "Codec2"
+                     ReferencedContainer = "container:Codec2.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FEF95011F202CDF009A3D58"
-               BuildableName = "codec2_ios.framework"
-               BlueprintName = "codec2_ios"
-               ReferencedContainer = "container:codec2_ios.xcodeproj">
+               BuildableName = "Codec2.framework"
+               BlueprintName = "Codec2"
+               ReferencedContainer = "container:Codec2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FEF95011F202CDF009A3D58"
-            BuildableName = "codec2_ios.framework"
-            BlueprintName = "codec2_ios"
-            ReferencedContainer = "container:codec2_ios.xcodeproj">
+            BuildableName = "Codec2.framework"
+            BlueprintName = "Codec2"
+            ReferencedContainer = "container:Codec2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -73,9 +73,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FEF95011F202CDF009A3D58"
-            BuildableName = "codec2_ios.framework"
-            BlueprintName = "codec2_ios"
-            ReferencedContainer = "container:codec2_ios.xcodeproj">
+            BuildableName = "Codec2.framework"
+            BlueprintName = "Codec2"
+            ReferencedContainer = "container:Codec2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FEF95011F202CDF009A3D58"
-            BuildableName = "codec2_ios.framework"
-            BlueprintName = "codec2_ios"
-            ReferencedContainer = "container:codec2_ios.xcodeproj">
+            BuildableName = "Codec2.framework"
+            BlueprintName = "Codec2"
+            ReferencedContainer = "container:Codec2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

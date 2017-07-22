@@ -23,7 +23,6 @@ FOUNDATION_EXPORT double codec2_iosVersionNumber;
 FOUNDATION_EXPORT const unsigned char codec2_iosVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <codec2_ios/PublicHeader.h>
-#import <codec2/src/codec2.h>
 
 
 

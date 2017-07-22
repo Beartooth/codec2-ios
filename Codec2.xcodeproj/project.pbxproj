@@ -10,7 +10,7 @@
 		1F15D4091F21715200FA5515 /* Codec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15D4081F21715200FA5515 /* Codec2.swift */; };
 		1F15D40D1F21756100FA5515 /* libcodec2.0.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; };
 		1F15D40E1F21756100FA5515 /* libcodec2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; };
-		1FEF95131F202CDF009A3D58 /* codec2-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95051F202CDF009A3D58 /* codec2-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95051F202CDF009A3D58 /* Codec2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEF979F1F2032DB009A3D58 /* ex_codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95201F2032DA009A3D58 /* ex_codec2.h */; };
 		1FEF987B1F2032DB009A3D58 /* _kiss_fft_guts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF96041F2032DA009A3D58 /* _kiss_fft_guts.h */; };
 		1FEF987D1F2032DB009A3D58 /* ampexp.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF96061F2032DA009A3D58 /* ampexp.h */; };
@@ -128,12 +128,10 @@
 		1F15D4081F21715200FA5515 /* Codec2.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Codec2.swift; sourceTree = "<group>"; tabWidth = 2; };
 		1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.0.4.dylib; sourceTree = "<group>"; };
 		1F15D40C1F21756100FA5515 /* libcodec2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.dylib; sourceTree = "<group>"; };
-		1F15D4101F217BFA00FA5515 /* codec2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-Bridging-Header.h"; sourceTree = "<group>"; };
-		1F7085A61F22BB83006A6288 /* codec2_compile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codec2_compile.h; sourceTree = "<group>"; };
-		1F7085A71F22BB83006A6288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F7085B11F22F218006A6288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
-		1FEF95021F202CDF009A3D58 /* codec2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = codec2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FEF95051F202CDF009A3D58 /* codec2-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codec2-ios.h"; sourceTree = "<group>"; };
+		1FEF95021F202CDF009A3D58 /* Codec2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codec2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FEF95051F202CDF009A3D58 /* Codec2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codec2.h; sourceTree = "<group>"; };
 		1FEF95061F202CDF009A3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEF95101F202CDF009A3D58 /* codec2_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codec2_iosTests.swift; sourceTree = "<group>"; };
 		1FEF95121F202CDF009A3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -781,13 +779,12 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		1F7085A51F22BB83006A6288 /* codec2_compile */ = {
+		1F7085B01F22F218006A6288 /* module */ = {
 			isa = PBXGroup;
 			children = (
-				1F7085A61F22BB83006A6288 /* codec2_compile.h */,
-				1F7085A71F22BB83006A6288 /* Info.plist */,
+				1F7085B11F22F218006A6288 /* module.modulemap */,
 			);
-			path = codec2_compile;
+			path = module;
 			sourceTree = "<group>";
 		};
 		1FEF94F81F202CDF009A3D58 = {
@@ -795,7 +792,6 @@
 			children = (
 				1FEF95041F202CDF009A3D58 /* codec2-ios */,
 				1FEF950F1F202CDF009A3D58 /* codec2-iosTests */,
-				1F7085A51F22BB83006A6288 /* codec2_compile */,
 				1FEF95031F202CDF009A3D58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -803,7 +799,7 @@
 		1FEF95031F202CDF009A3D58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FEF95021F202CDF009A3D58 /* codec2_ios.framework */,
+				1FEF95021F202CDF009A3D58 /* Codec2.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -811,14 +807,14 @@
 		1FEF95041F202CDF009A3D58 /* codec2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				1F7085B01F22F218006A6288 /* module */,
 				1F15D40A1F21756100FA5515 /* lib */,
 				1F7D21741F214A0D00FB78C9 /* build_codec2.sh */,
 				1FEF9A911F203FEE009A3D58 /* toolchain */,
 				1FEF951C1F2032DA009A3D58 /* codec2 */,
-				1FEF95051F202CDF009A3D58 /* codec2-ios.h */,
+				1FEF95051F202CDF009A3D58 /* Codec2.h */,
 				1FEF95061F202CDF009A3D58 /* Info.plist */,
 				1F15D4081F21715200FA5515 /* Codec2.swift */,
-				1F15D4101F217BFA00FA5515 /* codec2-Bridging-Header.h */,
 			);
 			path = "codec2-ios";
 			sourceTree = "<group>";
@@ -1641,6 +1637,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */,
+				1FEF98CA1F2032DB009A3D58 /* codec2.h in Headers */,
 				1FEF99411F2032DB009A3D58 /* menu.h in Headers */,
 				1FEF99391F2032DB009A3D58 /* varicode.h in Headers */,
 				1FEF98CE1F2032DB009A3D58 /* codec2_fm.h in Headers */,
@@ -1657,7 +1655,6 @@
 				1FEF99941F2032DB009A3D58 /* usbd_def.h in Headers */,
 				1FEF998A1F2032DB009A3D58 /* usbd_conf.h in Headers */,
 				1FEF994D1F2032DB009A3D58 /* stm32f4xx_conf.h in Headers */,
-				1FEF95131F202CDF009A3D58 /* codec2-ios.h in Headers */,
 				1FEF99361F2032DB009A3D58 /* test_bits.h in Headers */,
 				1FEF98CF1F2032DB009A3D58 /* codec2_internal.h in Headers */,
 				1FEF993D1F2032DB009A3D58 /* debugblinky.h in Headers */,
@@ -1710,7 +1707,6 @@
 				1FEF99051F2032DB009A3D58 /* golayenctable.h in Headers */,
 				1FEF99151F2032DB009A3D58 /* lpc.h in Headers */,
 				1FEF99041F2032DB009A3D58 /* golaydectable.h in Headers */,
-				1FEF98CA1F2032DB009A3D58 /* codec2.h in Headers */,
 				1FEF99461F2032DB009A3D58 /* sounds.h in Headers */,
 				1FEF998F1F2032DB009A3D58 /* usbd_cdc_core.h in Headers */,
 				1FEF990C1F2032DB009A3D58 /* interp.h in Headers */,
@@ -1747,9 +1743,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1FEF95011F202CDF009A3D58 /* codec2_ios */ = {
+		1FEF95011F202CDF009A3D58 /* Codec2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEF95161F202CDF009A3D58 /* Build configuration list for PBXNativeTarget "codec2_ios" */;
+			buildConfigurationList = 1FEF95161F202CDF009A3D58 /* Build configuration list for PBXNativeTarget "Codec2" */;
 			buildPhases = (
 				1FEF94FD1F202CDF009A3D58 /* Sources */,
 				1FEF94FE1F202CDF009A3D58 /* Frameworks */,
@@ -1761,9 +1757,9 @@
 			);
 			dependencies = (
 			);
-			name = codec2_ios;
+			name = Codec2;
 			productName = "codec2-ios";
-			productReference = 1FEF95021F202CDF009A3D58 /* codec2_ios.framework */;
+			productReference = 1FEF95021F202CDF009A3D58 /* Codec2.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1784,7 +1780,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1FEF94FC1F202CDF009A3D58 /* Build configuration list for PBXProject "codec2_ios" */;
+			buildConfigurationList = 1FEF94FC1F202CDF009A3D58 /* Build configuration list for PBXProject "Codec2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1796,7 +1792,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FEF95011F202CDF009A3D58 /* codec2_ios */,
+				1FEF95011F202CDF009A3D58 /* Codec2 */,
 			);
 		};
 /* End PBXProject section */
@@ -1952,7 +1948,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.beartooth.codec2-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/codec2-ios/codec2-Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/codec2-ios/module";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1980,7 +1977,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.beartooth.codec2-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/codec2-ios/codec2-Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/codec2-ios/module";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1988,7 +1986,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FEF94FC1F202CDF009A3D58 /* Build configuration list for PBXProject "codec2_ios" */ = {
+		1FEF94FC1F202CDF009A3D58 /* Build configuration list for PBXProject "Codec2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEF95141F202CDF009A3D58 /* Debug */,
@@ -1997,7 +1995,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FEF95161F202CDF009A3D58 /* Build configuration list for PBXNativeTarget "codec2_ios" */ = {
+		1FEF95161F202CDF009A3D58 /* Build configuration list for PBXNativeTarget "Codec2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FEF95171F202CDF009A3D58 /* Debug */,
