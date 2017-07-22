@@ -86,7 +86,7 @@ set (CMAKE_FIND_LIBRARY_SUFFIXES ".dylib" ".so" ".a")
 # and still cmake didn't fail in CMakeFindBinUtils.cmake (because it isn't rerun)
 # hardcode CMAKE_INSTALL_NAME_TOOL here to install_name_tool, so it behaves as it did before, Alex
 if (NOT DEFINED CMAKE_INSTALL_NAME_TOOL)
-	find_program(CMAKE_INSTALL_NAME_TOOL install_name_tool)
+	find_program(CMAKE_INSTALL_NAME_TOOL NAMES install_name_tool HINTS ${_CMAKE_TOOLCHAIN_LOCATION}})
 endif (NOT DEFINED CMAKE_INSTALL_NAME_TOOL)
 
 # Setup iOS platform unless specified manually with IOS_PLATFORM

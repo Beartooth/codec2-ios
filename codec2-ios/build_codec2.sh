@@ -79,7 +79,9 @@ function verifycmake() {
 # 	exit 1
 # fi
 
-# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+printenv > BUILD_ENV.txt 
 
 PROJECT_DIR=`pwd`
 CMAKE_IOS_TOOLCHAIN=$PROJECT_DIR/toolchain/iOS.cmake
@@ -102,8 +104,8 @@ verifyclang
 verifycmake
 
 # Use Clang
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
 
 
 ################################################
