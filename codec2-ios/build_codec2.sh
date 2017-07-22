@@ -182,10 +182,10 @@ lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_i386/$IOS_DYLIB
 lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_x86_64/$IOS_DYLIB_NAME -output $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
 echoorange "done"
 
-# Clean upls
-# echoorangen "Removing build directories..."
-# rm -rf $CODEC_2_NATIVE_BUILD $CODEC_2_IOS_BUILD $CODEC_2_SIMULATOR_BUILD
-# echoorange "done"
+# Clean up
+echoorangen "Removing build directories..."
+rm -rf $CODEC_2_NATIVE_BUILD $CODEC_2_IOS_BUILD $CODEC_2_SIMULATOR_BUILD
+echoorange "done"
 echogreen "Done! You can build the project from Xcode now."
 
 
