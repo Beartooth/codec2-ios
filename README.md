@@ -52,10 +52,8 @@ func decodeVoiceFrame(_ toDec: inout [UInt8]) -> [Int16]? {
 - git (`brew install git`)
 
 ### Build steps
-- Clone the repository: `git clone --recursive https://github.com/Beartooth/codec2-ios.git && cd codec2-ios/codec2-ios`
-- Build the Codec 2 dynamic libraries with `build_codec2.sh`
-- Open the project in Xcode and build the `codec2_ios` scheme
-
+- Clone the repository: `git clone --recursive https://github.com/Beartooth/codec2-ios.git`
+- Build the `codec2-ios` scheme from XCode or using `xcodebuild`
 
 ## Contributors
 [David Rowe](http://www.rowetel.com/) originally developed the codec, along with support from other researchers.  
