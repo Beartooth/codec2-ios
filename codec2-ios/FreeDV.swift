@@ -49,16 +49,16 @@ public class FreeDV {
         let byteModemSamples = self.n_nom_modem_samples * 2
 
         let speechBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteSpeechSamples)
-        var modBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_nom_modem_samples)
+        let modBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_nom_modem_samples)
         
-        speechBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_speech_samples) {
+        _ = speechBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_speech_samples) {
             (speechBuff16) in
             
             while(speechStream.read(speechBuff8, maxLength: byteSpeechSamples) == byteSpeechSamples)
             {
                 txUnsafe(modBuff16, speechBuff16)
 
-                modBuff16.withMemoryRebound(to: UInt8.self, capacity: byteModemSamples) {
+                _ = modBuff16.withMemoryRebound(to: UInt8.self, capacity: byteModemSamples) {
                     (modBuff8) in
                     
                     modStream.write(modBuff8, maxLength: byteModemSamples)
@@ -73,16 +73,16 @@ public class FreeDV {
         let byteModemSamples = self.n_nom_modem_samples * 2
         
         let modBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteModemSamples)
-        var speechBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_speech_samples)
+        let speechBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_speech_samples)
         
-        modBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
+        _ = modBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
             (modBuff16) in
             
             while(modStream.read(modBuff8, maxLength: byteModemSamples) == byteModemSamples)
             {
                 rxUnsafe(speechBuff16, modBuff16)
                 
-                speechBuff16.withMemoryRebound(to: UInt8.self, capacity: byteSpeechSamples) {
+                _ = speechBuff16.withMemoryRebound(to: UInt8.self, capacity: byteSpeechSamples) {
                     (speechBuff8) in
 
                     speechStream.write(speechBuff8, maxLength: byteSpeechSamples)
