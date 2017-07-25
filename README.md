@@ -11,7 +11,7 @@ on GitHub [here.](https://github.com/freedv/codec2)
 ## Installing
 
 ### Carthage 
-- Add this line to your `Cartfile`: `github "Beartooth/codec2-ios" "master"`
+- Add this line to your `Cartfile`: `github "Beartooth/codec2-ios"`
 - Use the typical [carthage workflow](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add `Codec2.framework` to your project.
 
 ## Usage
