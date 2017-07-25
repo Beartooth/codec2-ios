@@ -43,6 +43,54 @@ public class FreeDV {
         freedv_close(instance)
     }
     
+    func transmit(in speechStream: InputStream, out modStream: OutputStream) {
+        // n_speech_samples and n_nom_modem_samples counts Int16, but streams require UInt8s
+        let byteSpeechSamples = self.n_speech_samples * 2
+        let byteModemSamples = self.n_nom_modem_samples * 2
+
+        let speechBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteSpeechSamples)
+        var modBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_nom_modem_samples)
+        
+        speechBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_speech_samples) {
+            (speechBuff16) in
+            
+            while(speechStream.read(speechBuff8, maxLength: byteSpeechSamples) == byteSpeechSamples)
+            {
+                txUnsafe(modBuff16, speechBuff16)
+
+                modBuff16.withMemoryRebound(to: UInt8.self, capacity: byteModemSamples) {
+                    (modBuff8) in
+                    
+                    modStream.write(modBuff8, maxLength: byteModemSamples)
+                }
+            }
+        }
+    }
+
+    func receive(in modStream: InputStream, out speechStream: OutputStream) {
+        // n_speech_samples and n_nom_modem_samples counts Int16, but streams require UInt8s
+        let byteSpeechSamples = self.n_speech_samples * 2
+        let byteModemSamples = self.n_nom_modem_samples * 2
+        
+        let modBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteModemSamples)
+        var speechBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_speech_samples)
+        
+        modBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
+            (modBuff16) in
+            
+            while(modStream.read(modBuff8, maxLength: byteModemSamples) == byteModemSamples)
+            {
+                rxUnsafe(speechBuff16, modBuff16)
+                
+                speechBuff16.withMemoryRebound(to: UInt8.self, capacity: byteSpeechSamples) {
+                    (speechBuff8) in
+
+                    speechStream.write(speechBuff8, maxLength: byteSpeechSamples)
+                }
+            }
+        }
+    }
+    
     //# MARK: Parameters
     var squelch_en: Int {
         willSet {
@@ -183,6 +231,11 @@ public class FreeDV {
         freedv_tx(instance, modPtr, speechPtr)
     }
     
+    func txUnsafe(_ modPtr: UnsafeMutablePointer<Int16>, _ speechPtr: UnsafeMutablePointer<Int16>)
+    {
+        freedv_tx(instance, modPtr, speechPtr)
+    }
+    
     // void freedv_comptx  (struct freedv *freedv, COMP  mod_out[], short speech_in[]);
     // void freedv_codectx (struct freedv *f, short mod_out[], unsigned char *packed_codec_bits);
     // void freedv_datatx  (struct freedv *f, short mod_out[]);
@@ -193,6 +246,11 @@ public class FreeDV {
     func rx(_ speech_out: inout [Int16], _ demod_in: [Int16]) {
         let speechPtr = UnsafeMutablePointer(mutating: speech_out)
         let demodPtr = UnsafeMutablePointer(mutating: demod_in)
+        freedv_rx(instance, speechPtr, demodPtr)
+    }
+
+    func rxUnsafe(_ speechPtr: UnsafeMutablePointer<Int16>, _ demodPtr: UnsafeMutablePointer<Int16>)
+    {
         freedv_rx(instance, speechPtr, demodPtr)
     }
     
