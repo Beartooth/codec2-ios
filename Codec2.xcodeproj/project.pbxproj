@@ -40,6 +40,8 @@
 		1F0CA9C91F2704C900A96B12 /* codebooklspmelvq.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */; };
 		1F0CA9CA1F2704C900A96B12 /* codebookmel.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9891F2704C900A96B12 /* codebookmel.c */; };
 		1F15D4091F21715200FA5515 /* Codec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15D4081F21715200FA5515 /* Codec2.swift */; };
+		1FED839C1F27BBF00045698B /* FreeDV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED839B1F27BBF00045698B /* FreeDV.swift */; };
+		1FED839E1F27BFBC0045698B /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FED839D1F27BEFE0045698B /* config.h */; };
 		1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95051F202CDF009A3D58 /* Codec2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEF979F1F2032DB009A3D58 /* ex_codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95201F2032DA009A3D58 /* ex_codec2.h */; };
 		1FEF987B1F2032DB009A3D58 /* _kiss_fft_guts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF96041F2032DA009A3D58 /* _kiss_fft_guts.h */; };
@@ -221,8 +223,10 @@
 		1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebooklspmelvq.c; sourceTree = "<group>"; };
 		1F0CA9891F2704C900A96B12 /* codebookmel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookmel.c; sourceTree = "<group>"; };
 		1F15D4081F21715200FA5515 /* Codec2.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Codec2.swift; sourceTree = "<group>"; tabWidth = 2; };
-		1F7085B11F22F218006A6288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		1F7085B11F22F218006A6288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = module/module.modulemap; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
+		1FED839B1F27BBF00045698B /* FreeDV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeDV.swift; sourceTree = "<group>"; };
+		1FED839D1F27BEFE0045698B /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		1FEF95021F202CDF009A3D58 /* Codec2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codec2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEF95051F202CDF009A3D58 /* Codec2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Codec2.h; sourceTree = "<group>"; };
 		1FEF95061F202CDF009A3D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -871,6 +875,7 @@
 				1F0CA9871F2704C900A96B12 /* codebookjvm.c */,
 				1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */,
 				1F0CA9891F2704C900A96B12 /* codebookmel.c */,
+				1FED839D1F27BEFE0045698B /* config.h */,
 			);
 			path = generated;
 			sourceTree = "<group>";
@@ -944,7 +949,6 @@
 		1F7085B01F22F218006A6288 /* module */ = {
 			isa = PBXGroup;
 			children = (
-				1F7085B11F22F218006A6288 /* module.modulemap */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -972,10 +976,12 @@
 				1F0CA9471F2704C900A96B12 /* generated */,
 				1F7085B01F22F218006A6288 /* module */,
 				1F7D21741F214A0D00FB78C9 /* build_codec2.sh */,
+				1F7085B11F22F218006A6288 /* module.modulemap */,
 				1FEF9A911F203FEE009A3D58 /* toolchain */,
 				1FEF951C1F2032DA009A3D58 /* codec2 */,
 				1FEF95051F202CDF009A3D58 /* Codec2.h */,
 				1FEF95061F202CDF009A3D58 /* Info.plist */,
+				1FED839B1F27BBF00045698B /* FreeDV.swift */,
 				1F15D4081F21715200FA5515 /* Codec2.swift */,
 			);
 			path = "codec2-ios";
@@ -1800,6 +1806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */,
+				1FED839E1F27BFBC0045698B /* config.h in Headers */,
 				1FEF98CA1F2032DB009A3D58 /* codec2.h in Headers */,
 				1FEF99411F2032DB009A3D58 /* menu.h in Headers */,
 				1FEF99391F2032DB009A3D58 /* varicode.h in Headers */,
@@ -2006,6 +2013,7 @@
 				1F0CA92D1F26E0E300A96B12 /* lpc.c in Sources */,
 				1F0CA9C91F2704C900A96B12 /* codebooklspmelvq.c in Sources */,
 				1F0CA92C1F26E0D700A96B12 /* dump.c in Sources */,
+				1FED839C1F27BBF00045698B /* FreeDV.swift in Sources */,
 				1F15D4091F21715200FA5515 /* Codec2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2042,7 +2050,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2050,11 +2058,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks @executable_path/Frameworks";
@@ -2101,13 +2111,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks @executable_path/Frameworks";
