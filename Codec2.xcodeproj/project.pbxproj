@@ -10,8 +10,8 @@
 		1F15D4091F21715200FA5515 /* Codec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15D4081F21715200FA5515 /* Codec2.swift */; };
 		1F15D40D1F21756100FA5515 /* libcodec2.0.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; };
 		1F15D40E1F21756100FA5515 /* libcodec2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; };
-		1F9C281F1F26B2D70050AC43 /* libcodec2.0.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; };
-		1F9C28201F26B2DD0050AC43 /* libcodec2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; };
+		1F9C281F1F26B2D70050AC43 /* libcodec2.0.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1F9C28201F26B2DD0050AC43 /* libcodec2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95051F202CDF009A3D58 /* Codec2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEF979F1F2032DB009A3D58 /* ex_codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95201F2032DA009A3D58 /* ex_codec2.h */; };
 		1FEF987B1F2032DB009A3D58 /* _kiss_fft_guts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF96041F2032DA009A3D58 /* _kiss_fft_guts.h */; };
@@ -1845,8 +1845,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1904,8 +1904,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1938,7 +1938,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XC9R7J4N7W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1967,7 +1967,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XC9R7J4N7W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
