@@ -2,3 +2,8 @@ module Codec2Private {
     header "../codec2/src/codec2.h"
     export *
 }
+
+module FreeDVPrivate {
+    header "../codec2/src/freedv_api.h"
+    export *
+}
