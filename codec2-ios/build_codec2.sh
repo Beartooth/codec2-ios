@@ -149,7 +149,7 @@ echoorangen "iOS: Generating build system..."
 cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=OS -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2 > cmake_os.log 2>&1
 echoorange "done"
 echoorangen "iOS: Building..."
-xcodebuild -quiet -target codec2 install -configuration Release clean build BITCODE_GENERATION_MODE=bitcode > os_build.log 2>&1
+xcodebuild -quiet -target codec2 install -configuration Release build BITCODE_GENERATION_MODE=bitcode > os_build.log 2>&1
 echoorange "done"
 mkdir -p $IOS_OS_DYLIBS
 mv $IOS_OS_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_OS_DYLIBS
@@ -163,13 +163,13 @@ echoorangen "iOS simulator: Generating build system..."
 cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_IOS_TOOLCHAIN -DIOS_PLATFORM=SIMULATOR -DCMAKE_MODULE_PATH=$CODEC_2_NATIVE_BUILD -GXcode ../codec2 > cmake_sim.log 2>&1
 echoorange "done"
 echoorangen "iOS simulator: Building i386..."
-xcodebuild -quiet -target codec2 install -configuration Release clean build BITCODE_GENERATION_MODE=bitcode ARCHS="i386" > sim_build_i386.log 2>&1
+xcodebuild -quiet -target codec2 install -configuration Release build BITCODE_GENERATION_MODE=bitcode ARCHS="i386" > sim_build_i386.log 2>&1
 echoorange "done"
 mkdir -p $IOS_SIM_DYLIBS_i386
 mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_i386
 mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386
 echoorangen "iOS simulator: Building x86_64..."
-xcodebuild -quiet -target codec2 install -configuration Release clean build BITCODE_GENERATION_MODE=bitcode ARCHS="x86_64" VALID_ARCHS="x86_64" > sim_build_x86_64.log 2>&1
+xcodebuild -quiet -target codec2 install -configuration Release build BITCODE_GENERATION_MODE=bitcode ARCHS="x86_64" VALID_ARCHS="x86_64" > sim_build_x86_64.log 2>&1
 echoorange "done"
 mkdir -p $IOS_SIM_DYLIBS_x86_64
 mv $IOS_SIM_BIN_OUTPUT/$IOS_DYLIB_NAME_NO_V $IOS_SIM_DYLIBS_x86_64
@@ -183,8 +183,8 @@ lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386/$IOS_DYLIB_NAME
 echoorange "done"
 
 echoorangen "Changing binary install names..."
-install_name_tool -id @executable_path/Frameworks $CODEC_2_OUTPUT/$IOS_DYLIB_NAME_NO_V
-install_name_tool -id @executable_path/Frameworks $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
+install_name_tool -id @executable_path/Frameworks/$IOS_DYLIB_NAME_NO_V $CODEC_2_OUTPUT/$IOS_DYLIB_NAME_NO_V
+install_name_tool -id @executable_path/Frameworks/$IOS_DYLIB_NAME $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
 echoorange "done"
 
 echogreen "Done! You can build the project from Xcode now."
