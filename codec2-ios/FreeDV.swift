@@ -28,9 +28,13 @@ public enum Mode: Int32 {
 public class FreeDV {
     var instance: OpaquePointer
 
-    init(_ mode: Mode) {
-        instance = freedv_open(mode.rawValue)
+    init?(_ mode: Mode) {
+        let maybeFreedvPtr = freedv_open(mode.rawValue)
+        guard let freedvPtr = maybeFreedvPtr else {
+            return nil
+        }
         
+        instance = freedvPtr
         squelch_en = 1
         snr_squelch_thresh = -100
     }
