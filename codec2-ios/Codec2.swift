@@ -97,7 +97,7 @@ public class Codec2 {
    - returns: An an encoded voice frame, packed into a byte array.
    */
   public func encode(speech: inout [Int16]) -> [UInt8] {
-    var encoded = [UInt8](repeating: 0, count: bitsPerEncFrame)
+    var encoded = [UInt8](repeating: 0, count: bytesPerEncFrame)
     codec2_encode(cPtr, &encoded, &speech)
     return encoded
   }

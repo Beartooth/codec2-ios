@@ -7,11 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0CA92C1F26E0D700A96B12 /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96661F2032DA009A3D58 /* dump.c */; };
+		1F0CA92D1F26E0E300A96B12 /* lpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF969E1F2032DA009A3D58 /* lpc.c */; };
+		1F0CA92E1F26E0EB00A96B12 /* nlp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96A71F2032DA009A3D58 /* nlp.c */; };
+		1F0CA92F1F27045E00A96B12 /* codec2.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96531F2032DA009A3D58 /* codec2.c */; };
+		1F0CA9301F27045E00A96B12 /* cohpsk.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF965A1F2032DA009A3D58 /* cohpsk.c */; };
+		1F0CA9311F27045E00A96B12 /* fdmdv.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96681F2032DA009A3D58 /* fdmdv.c */; };
+		1F0CA9321F27045E00A96B12 /* fifo.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96721F2032DA009A3D58 /* fifo.c */; };
+		1F0CA9331F27045E00A96B12 /* fm.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96731F2032DA009A3D58 /* fm.c */; };
+		1F0CA9341F27045E00A96B12 /* fmfsk.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96761F2032DA009A3D58 /* fmfsk.c */; };
+		1F0CA9351F27045E00A96B12 /* fsk.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96841F2032DA009A3D58 /* fsk.c */; };
+		1F0CA9361F27045E00A96B12 /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96971F2032DA009A3D58 /* kiss_fft.c */; };
+		1F0CA9371F27045E00A96B12 /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96991F2032DA009A3D58 /* kiss_fftr.c */; };
+		1F0CA9381F27045E00A96B12 /* linreg.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF969B1F2032DA009A3D58 /* linreg.c */; };
+		1F0CA9391F27045E00A96B12 /* postfilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96B41F2032DA009A3D58 /* postfilter.c */; };
+		1F0CA93A1F27045E00A96B12 /* sine.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96BD1F2032DA009A3D58 /* sine.c */; };
+		1F0CA93B1F2704A100A96B12 /* freedv_api.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF967B1F2032DA009A3D58 /* freedv_api.c */; };
+		1F0CA93C1F2704A100A96B12 /* freedv_data_channel.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF967E1F2032DA009A3D58 /* freedv_data_channel.c */; };
+		1F0CA93D1F2704A100A96B12 /* freedv_vhf_framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96821F2032DA009A3D58 /* freedv_vhf_framing.c */; };
+		1F0CA93E1F2704A100A96B12 /* golay23.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF968C1F2032DA009A3D58 /* golay23.c */; };
+		1F0CA93F1F2704A100A96B12 /* interp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96951F2032DA009A3D58 /* interp.c */; };
+		1F0CA9401F2704A100A96B12 /* lsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96A01F2032DA009A3D58 /* lsp.c */; };
+		1F0CA9411F2704A100A96B12 /* modem_stats.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96A51F2032DA009A3D58 /* modem_stats.c */; };
+		1F0CA9421F2704A100A96B12 /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96AD1F2032DA009A3D58 /* pack.c */; };
+		1F0CA9431F2704A100A96B12 /* phase.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96AE1F2032DA009A3D58 /* phase.c */; };
+		1F0CA9441F2704A100A96B12 /* quantise.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96B61F2032DA009A3D58 /* quantise.c */; };
+		1F0CA9451F2704A100A96B12 /* varicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF96C21F2032DA009A3D58 /* varicode.c */; };
+		1F0CA9C51F2704C900A96B12 /* codebook.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9841F2704C900A96B12 /* codebook.c */; };
+		1F0CA9C61F2704C900A96B12 /* codebookd.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9851F2704C900A96B12 /* codebookd.c */; };
+		1F0CA9C71F2704C900A96B12 /* codebookge.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9861F2704C900A96B12 /* codebookge.c */; };
+		1F0CA9C81F2704C900A96B12 /* codebookjvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9871F2704C900A96B12 /* codebookjvm.c */; };
+		1F0CA9C91F2704C900A96B12 /* codebooklspmelvq.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */; };
+		1F0CA9CA1F2704C900A96B12 /* codebookmel.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F0CA9891F2704C900A96B12 /* codebookmel.c */; };
 		1F15D4091F21715200FA5515 /* Codec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F15D4081F21715200FA5515 /* Codec2.swift */; };
-		1F15D40D1F21756100FA5515 /* libcodec2.0.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; };
-		1F15D40E1F21756100FA5515 /* libcodec2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; };
-		1F9C281F1F26B2D70050AC43 /* libcodec2.0.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		1F9C28201F26B2DD0050AC43 /* libcodec2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F15D40C1F21756100FA5515 /* libcodec2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1FEF95131F202CDF009A3D58 /* Codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95051F202CDF009A3D58 /* Codec2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEF979F1F2032DB009A3D58 /* ex_codec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF95201F2032DA009A3D58 /* ex_codec2.h */; };
 		1FEF987B1F2032DB009A3D58 /* _kiss_fft_guts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEF96041F2032DA009A3D58 /* _kiss_fft_guts.h */; };
@@ -121,17 +149,78 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1F9C28201F26B2DD0050AC43 /* libcodec2.dylib in CopyFiles */,
-				1F9C281F1F26B2D70050AC43 /* libcodec2.0.4.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F0CA9491F2704C900A96B12 /* dlsp1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp1.txt; sourceTree = "<group>"; };
+		1F0CA94A1F2704C900A96B12 /* dlsp10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp10.txt; sourceTree = "<group>"; };
+		1F0CA94B1F2704C900A96B12 /* dlsp2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp2.txt; sourceTree = "<group>"; };
+		1F0CA94C1F2704C900A96B12 /* dlsp3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp3.txt; sourceTree = "<group>"; };
+		1F0CA94D1F2704C900A96B12 /* dlsp4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp4.txt; sourceTree = "<group>"; };
+		1F0CA94E1F2704C900A96B12 /* dlsp5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp5.txt; sourceTree = "<group>"; };
+		1F0CA94F1F2704C900A96B12 /* dlsp6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp6.txt; sourceTree = "<group>"; };
+		1F0CA9501F2704C900A96B12 /* dlsp7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp7.txt; sourceTree = "<group>"; };
+		1F0CA9511F2704C900A96B12 /* dlsp8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp8.txt; sourceTree = "<group>"; };
+		1F0CA9521F2704C900A96B12 /* dlsp9.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dlsp9.txt; sourceTree = "<group>"; };
+		1F0CA9531F2704C900A96B12 /* gecb.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gecb.txt; sourceTree = "<group>"; };
+		1F0CA9541F2704C900A96B12 /* lsp1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp1.txt; sourceTree = "<group>"; };
+		1F0CA9551F2704C900A96B12 /* lsp10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp10.txt; sourceTree = "<group>"; };
+		1F0CA9561F2704C900A96B12 /* lsp2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp2.txt; sourceTree = "<group>"; };
+		1F0CA9571F2704C900A96B12 /* lsp3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp3.txt; sourceTree = "<group>"; };
+		1F0CA9581F2704C900A96B12 /* lsp4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp4.txt; sourceTree = "<group>"; };
+		1F0CA9591F2704C900A96B12 /* lsp5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp5.txt; sourceTree = "<group>"; };
+		1F0CA95A1F2704C900A96B12 /* lsp6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp6.txt; sourceTree = "<group>"; };
+		1F0CA95B1F2704C900A96B12 /* lsp7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp7.txt; sourceTree = "<group>"; };
+		1F0CA95C1F2704C900A96B12 /* lsp8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp8.txt; sourceTree = "<group>"; };
+		1F0CA95D1F2704C900A96B12 /* lsp8910.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp8910.txt; sourceTree = "<group>"; };
+		1F0CA95E1F2704C900A96B12 /* lsp9.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lsp9.txt; sourceTree = "<group>"; };
+		1F0CA95F1F2704C900A96B12 /* lspdt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt.txt; sourceTree = "<group>"; };
+		1F0CA9601F2704C900A96B12 /* lspdt1-10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lspdt1-10.txt"; sourceTree = "<group>"; };
+		1F0CA9611F2704C900A96B12 /* lspdt1-4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lspdt1-4.txt"; sourceTree = "<group>"; };
+		1F0CA9621F2704C900A96B12 /* lspdt1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt1.txt; sourceTree = "<group>"; };
+		1F0CA9631F2704C900A96B12 /* lspdt10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt10.txt; sourceTree = "<group>"; };
+		1F0CA9641F2704C900A96B12 /* lspdt2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt2.txt; sourceTree = "<group>"; };
+		1F0CA9651F2704C900A96B12 /* lspdt3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt3.txt; sourceTree = "<group>"; };
+		1F0CA9661F2704C900A96B12 /* lspdt4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt4.txt; sourceTree = "<group>"; };
+		1F0CA9671F2704C900A96B12 /* lspdt5-10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lspdt5-10.txt"; sourceTree = "<group>"; };
+		1F0CA9681F2704C900A96B12 /* lspdt5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt5.txt; sourceTree = "<group>"; };
+		1F0CA9691F2704C900A96B12 /* lspdt6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt6.txt; sourceTree = "<group>"; };
+		1F0CA96A1F2704C900A96B12 /* lspdt7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt7.txt; sourceTree = "<group>"; };
+		1F0CA96B1F2704C900A96B12 /* lspdt8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt8.txt; sourceTree = "<group>"; };
+		1F0CA96C1F2704C900A96B12 /* lspdt9.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspdt9.txt; sourceTree = "<group>"; };
+		1F0CA96D1F2704C900A96B12 /* lspjvm1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspjvm1.txt; sourceTree = "<group>"; };
+		1F0CA96E1F2704C900A96B12 /* lspjvm2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspjvm2.txt; sourceTree = "<group>"; };
+		1F0CA96F1F2704C900A96B12 /* lspjvm3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspjvm3.txt; sourceTree = "<group>"; };
+		1F0CA9701F2704C900A96B12 /* lspmelvq1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspmelvq1.txt; sourceTree = "<group>"; };
+		1F0CA9711F2704C900A96B12 /* lspmelvq2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspmelvq2.txt; sourceTree = "<group>"; };
+		1F0CA9721F2704C900A96B12 /* lspmelvq3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspmelvq3.txt; sourceTree = "<group>"; };
+		1F0CA9731F2704C900A96B12 /* lspres_bw1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspres_bw1.txt; sourceTree = "<group>"; };
+		1F0CA9741F2704C900A96B12 /* lspres_bw2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspres_bw2.txt; sourceTree = "<group>"; };
+		1F0CA9751F2704C900A96B12 /* lspres_centre1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspres_centre1.txt; sourceTree = "<group>"; };
+		1F0CA9761F2704C900A96B12 /* lspres_centre2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspres_centre2.txt; sourceTree = "<group>"; };
+		1F0CA9771F2704C900A96B12 /* lspvqanssi1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqanssi1.txt; sourceTree = "<group>"; };
+		1F0CA9781F2704C900A96B12 /* lspvqanssi2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqanssi2.txt; sourceTree = "<group>"; };
+		1F0CA9791F2704C900A96B12 /* lspvqanssi3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqanssi3.txt; sourceTree = "<group>"; };
+		1F0CA97A1F2704C900A96B12 /* lspvqanssi4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqanssi4.txt; sourceTree = "<group>"; };
+		1F0CA97B1F2704C900A96B12 /* lspvqexp1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqexp1.txt; sourceTree = "<group>"; };
+		1F0CA97C1F2704C900A96B12 /* lspvqexp2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqexp2.txt; sourceTree = "<group>"; };
+		1F0CA97D1F2704C900A96B12 /* lspvqexp3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lspvqexp3.txt; sourceTree = "<group>"; };
+		1F0CA97E1F2704C900A96B12 /* mel1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel1.txt; sourceTree = "<group>"; };
+		1F0CA97F1F2704C900A96B12 /* mel2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel2.txt; sourceTree = "<group>"; };
+		1F0CA9801F2704C900A96B12 /* mel3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel3.txt; sourceTree = "<group>"; };
+		1F0CA9811F2704C900A96B12 /* mel4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel4.txt; sourceTree = "<group>"; };
+		1F0CA9821F2704C900A96B12 /* mel5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel5.txt; sourceTree = "<group>"; };
+		1F0CA9831F2704C900A96B12 /* mel6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mel6.txt; sourceTree = "<group>"; };
+		1F0CA9841F2704C900A96B12 /* codebook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebook.c; sourceTree = "<group>"; };
+		1F0CA9851F2704C900A96B12 /* codebookd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookd.c; sourceTree = "<group>"; };
+		1F0CA9861F2704C900A96B12 /* codebookge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookge.c; sourceTree = "<group>"; };
+		1F0CA9871F2704C900A96B12 /* codebookjvm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookjvm.c; sourceTree = "<group>"; };
+		1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebooklspmelvq.c; sourceTree = "<group>"; };
+		1F0CA9891F2704C900A96B12 /* codebookmel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookmel.c; sourceTree = "<group>"; };
 		1F15D4081F21715200FA5515 /* Codec2.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Codec2.swift; sourceTree = "<group>"; tabWidth = 2; };
-		1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.0.4.dylib; sourceTree = "<group>"; };
-		1F15D40C1F21756100FA5515 /* libcodec2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcodec2.dylib; sourceTree = "<group>"; };
 		1F7085B11F22F218006A6288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
 		1FEF95021F202CDF009A3D58 /* Codec2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Codec2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,21 +855,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F15D40E1F21756100FA5515 /* libcodec2.dylib in Frameworks */,
-				1F15D40D1F21756100FA5515 /* libcodec2.0.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F15D40A1F21756100FA5515 /* lib */ = {
+		1F0CA9471F2704C900A96B12 /* generated */ = {
 			isa = PBXGroup;
 			children = (
-				1F15D40B1F21756100FA5515 /* libcodec2.0.4.dylib */,
-				1F15D40C1F21756100FA5515 /* libcodec2.dylib */,
+				1F0CA9481F2704C900A96B12 /* codebook */,
+				1F0CA9841F2704C900A96B12 /* codebook.c */,
+				1F0CA9851F2704C900A96B12 /* codebookd.c */,
+				1F0CA9861F2704C900A96B12 /* codebookge.c */,
+				1F0CA9871F2704C900A96B12 /* codebookjvm.c */,
+				1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */,
+				1F0CA9891F2704C900A96B12 /* codebookmel.c */,
 			);
-			path = lib;
+			path = generated;
+			sourceTree = "<group>";
+		};
+		1F0CA9481F2704C900A96B12 /* codebook */ = {
+			isa = PBXGroup;
+			children = (
+				1F0CA9491F2704C900A96B12 /* dlsp1.txt */,
+				1F0CA94A1F2704C900A96B12 /* dlsp10.txt */,
+				1F0CA94B1F2704C900A96B12 /* dlsp2.txt */,
+				1F0CA94C1F2704C900A96B12 /* dlsp3.txt */,
+				1F0CA94D1F2704C900A96B12 /* dlsp4.txt */,
+				1F0CA94E1F2704C900A96B12 /* dlsp5.txt */,
+				1F0CA94F1F2704C900A96B12 /* dlsp6.txt */,
+				1F0CA9501F2704C900A96B12 /* dlsp7.txt */,
+				1F0CA9511F2704C900A96B12 /* dlsp8.txt */,
+				1F0CA9521F2704C900A96B12 /* dlsp9.txt */,
+				1F0CA9531F2704C900A96B12 /* gecb.txt */,
+				1F0CA9541F2704C900A96B12 /* lsp1.txt */,
+				1F0CA9551F2704C900A96B12 /* lsp10.txt */,
+				1F0CA9561F2704C900A96B12 /* lsp2.txt */,
+				1F0CA9571F2704C900A96B12 /* lsp3.txt */,
+				1F0CA9581F2704C900A96B12 /* lsp4.txt */,
+				1F0CA9591F2704C900A96B12 /* lsp5.txt */,
+				1F0CA95A1F2704C900A96B12 /* lsp6.txt */,
+				1F0CA95B1F2704C900A96B12 /* lsp7.txt */,
+				1F0CA95C1F2704C900A96B12 /* lsp8.txt */,
+				1F0CA95D1F2704C900A96B12 /* lsp8910.txt */,
+				1F0CA95E1F2704C900A96B12 /* lsp9.txt */,
+				1F0CA95F1F2704C900A96B12 /* lspdt.txt */,
+				1F0CA9601F2704C900A96B12 /* lspdt1-10.txt */,
+				1F0CA9611F2704C900A96B12 /* lspdt1-4.txt */,
+				1F0CA9621F2704C900A96B12 /* lspdt1.txt */,
+				1F0CA9631F2704C900A96B12 /* lspdt10.txt */,
+				1F0CA9641F2704C900A96B12 /* lspdt2.txt */,
+				1F0CA9651F2704C900A96B12 /* lspdt3.txt */,
+				1F0CA9661F2704C900A96B12 /* lspdt4.txt */,
+				1F0CA9671F2704C900A96B12 /* lspdt5-10.txt */,
+				1F0CA9681F2704C900A96B12 /* lspdt5.txt */,
+				1F0CA9691F2704C900A96B12 /* lspdt6.txt */,
+				1F0CA96A1F2704C900A96B12 /* lspdt7.txt */,
+				1F0CA96B1F2704C900A96B12 /* lspdt8.txt */,
+				1F0CA96C1F2704C900A96B12 /* lspdt9.txt */,
+				1F0CA96D1F2704C900A96B12 /* lspjvm1.txt */,
+				1F0CA96E1F2704C900A96B12 /* lspjvm2.txt */,
+				1F0CA96F1F2704C900A96B12 /* lspjvm3.txt */,
+				1F0CA9701F2704C900A96B12 /* lspmelvq1.txt */,
+				1F0CA9711F2704C900A96B12 /* lspmelvq2.txt */,
+				1F0CA9721F2704C900A96B12 /* lspmelvq3.txt */,
+				1F0CA9731F2704C900A96B12 /* lspres_bw1.txt */,
+				1F0CA9741F2704C900A96B12 /* lspres_bw2.txt */,
+				1F0CA9751F2704C900A96B12 /* lspres_centre1.txt */,
+				1F0CA9761F2704C900A96B12 /* lspres_centre2.txt */,
+				1F0CA9771F2704C900A96B12 /* lspvqanssi1.txt */,
+				1F0CA9781F2704C900A96B12 /* lspvqanssi2.txt */,
+				1F0CA9791F2704C900A96B12 /* lspvqanssi3.txt */,
+				1F0CA97A1F2704C900A96B12 /* lspvqanssi4.txt */,
+				1F0CA97B1F2704C900A96B12 /* lspvqexp1.txt */,
+				1F0CA97C1F2704C900A96B12 /* lspvqexp2.txt */,
+				1F0CA97D1F2704C900A96B12 /* lspvqexp3.txt */,
+				1F0CA97E1F2704C900A96B12 /* mel1.txt */,
+				1F0CA97F1F2704C900A96B12 /* mel2.txt */,
+				1F0CA9801F2704C900A96B12 /* mel3.txt */,
+				1F0CA9811F2704C900A96B12 /* mel4.txt */,
+				1F0CA9821F2704C900A96B12 /* mel5.txt */,
+				1F0CA9831F2704C900A96B12 /* mel6.txt */,
+			);
+			path = codebook;
 			sourceTree = "<group>";
 		};
 		1F7085B01F22F218006A6288 /* module */ = {
@@ -811,8 +969,8 @@
 		1FEF95041F202CDF009A3D58 /* codec2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				1F0CA9471F2704C900A96B12 /* generated */,
 				1F7085B01F22F218006A6288 /* module */,
-				1F15D40A1F21756100FA5515 /* lib */,
 				1F7D21741F214A0D00FB78C9 /* build_codec2.sh */,
 				1FEF9A911F203FEE009A3D58 /* toolchain */,
 				1FEF951C1F2032DA009A3D58 /* codec2 */,
@@ -1816,6 +1974,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0CA93B1F2704A100A96B12 /* freedv_api.c in Sources */,
+				1F0CA9C51F2704C900A96B12 /* codebook.c in Sources */,
+				1F0CA93C1F2704A100A96B12 /* freedv_data_channel.c in Sources */,
+				1F0CA93D1F2704A100A96B12 /* freedv_vhf_framing.c in Sources */,
+				1F0CA9C81F2704C900A96B12 /* codebookjvm.c in Sources */,
+				1F0CA93E1F2704A100A96B12 /* golay23.c in Sources */,
+				1F0CA9C71F2704C900A96B12 /* codebookge.c in Sources */,
+				1F0CA93F1F2704A100A96B12 /* interp.c in Sources */,
+				1F0CA9C61F2704C900A96B12 /* codebookd.c in Sources */,
+				1F0CA9401F2704A100A96B12 /* lsp.c in Sources */,
+				1F0CA9411F2704A100A96B12 /* modem_stats.c in Sources */,
+				1F0CA9421F2704A100A96B12 /* pack.c in Sources */,
+				1F0CA9431F2704A100A96B12 /* phase.c in Sources */,
+				1F0CA9441F2704A100A96B12 /* quantise.c in Sources */,
+				1F0CA9451F2704A100A96B12 /* varicode.c in Sources */,
+				1F0CA92F1F27045E00A96B12 /* codec2.c in Sources */,
+				1F0CA9301F27045E00A96B12 /* cohpsk.c in Sources */,
+				1F0CA9311F27045E00A96B12 /* fdmdv.c in Sources */,
+				1F0CA9321F27045E00A96B12 /* fifo.c in Sources */,
+				1F0CA9331F27045E00A96B12 /* fm.c in Sources */,
+				1F0CA9341F27045E00A96B12 /* fmfsk.c in Sources */,
+				1F0CA9351F27045E00A96B12 /* fsk.c in Sources */,
+				1F0CA9361F27045E00A96B12 /* kiss_fft.c in Sources */,
+				1F0CA9371F27045E00A96B12 /* kiss_fftr.c in Sources */,
+				1F0CA9CA1F2704C900A96B12 /* codebookmel.c in Sources */,
+				1F0CA9381F27045E00A96B12 /* linreg.c in Sources */,
+				1F0CA9391F27045E00A96B12 /* postfilter.c in Sources */,
+				1F0CA93A1F27045E00A96B12 /* sine.c in Sources */,
+				1F0CA92E1F26E0EB00A96B12 /* nlp.c in Sources */,
+				1F0CA92D1F26E0E300A96B12 /* lpc.c in Sources */,
+				1F0CA9C91F2704C900A96B12 /* codebooklspmelvq.c in Sources */,
+				1F0CA92C1F26E0D700A96B12 /* dump.c in Sources */,
 				1F15D4091F21715200FA5515 /* Codec2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1845,8 +2035,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1904,8 +2094,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1938,7 +2128,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XC9R7J4N7W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1948,10 +2139,7 @@
 				INFOPLIST_FILE = "codec2-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/codec2-ios/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.beartooth.codec2-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1967,7 +2155,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = XC9R7J4N7W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1977,10 +2165,7 @@
 				INFOPLIST_FILE = "codec2-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/codec2-ios/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.beartooth.codec2-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
