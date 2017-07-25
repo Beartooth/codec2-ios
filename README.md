@@ -4,7 +4,7 @@
 Codec 2 is a low bitrate speech codec with compression modes ranging from 700 bit/s to 3200 bit/s. It is useful for voice
 compression in bandwidth constrained environments. The codec accepts 16 bit 8Khz PCM audio as input.
 
-This framework is based on [a fork of the Codec 2 source code](https://github.com/Beartooth/codec2-ios).
+This framework is based on [a fork of the Codec 2 source code](https://github.com/Beartooth/codec2/tree/cross-compile-support).
 The original source can be found on SVN [here](https://svn.code.sf.net/p/freetel/code/codec2-dev/) and
 on GitHub [here.](https://github.com/freedv/codec2)
  
