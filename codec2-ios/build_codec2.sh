@@ -183,8 +183,8 @@ lipo -create $IOS_OS_DYLIBS/$IOS_DYLIB_NAME $IOS_SIM_DYLIBS_i386/$IOS_DYLIB_NAME
 echoorange "done"
 
 echoorangen "Changing binary install names..."
-install_name_tool -id @executable_path/Frameworks/$IOS_DYLIB_NAME_NO_V $CODEC_2_OUTPUT/$IOS_DYLIB_NAME_NO_V
-install_name_tool -id @executable_path/Frameworks/$IOS_DYLIB_NAME $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
+install_name_tool -id @executable_path/Frameworks/Codec2.framework/Frameworks/$IOS_DYLIB_NAME_NO_V $CODEC_2_OUTPUT/$IOS_DYLIB_NAME_NO_V
+install_name_tool -id @executable_path/Frameworks/Codec2.framework/Frameworks/$IOS_DYLIB_NAME $CODEC_2_OUTPUT/$IOS_DYLIB_NAME
 echoorange "done"
 
 echogreen "Done! You can build the project from Xcode now."
