@@ -67,26 +67,31 @@ public class FreeDV {
         }
     }
 
-    func receive(in modStream: InputStream, out speechStream: OutputStream) {
+    func receive(in demodStream: InputStream, out speechStream: OutputStream) {
         // n_speech_samples and n_nom_modem_samples counts Int16, but streams require UInt8s
         let byteSpeechSamples = self.n_speech_samples * 2
         let byteModemSamples = self.n_nom_modem_samples * 2
         
-        let modBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteModemSamples)
+        let demodBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteModemSamples)
         let speechBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_speech_samples)
         
-        _ = modBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
-            (modBuff16) in
+        _ = demodBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
+            (demodBuff16) in
             
-            while(modStream.read(modBuff8, maxLength: byteModemSamples) == byteModemSamples)
+            var byteNinSamples = nin * 2
+            
+            while(demodStream.read(demodBuff8, maxLength: byteNinSamples) == byteNinSamples)
             {
-                rxUnsafe(speechBuff16, modBuff16)
+                let noutSamples = rxUnsafe(speechBuff16, demodBuff16)
+                let byteNoutSamples = noutSamples * 2
                 
                 _ = speechBuff16.withMemoryRebound(to: UInt8.self, capacity: byteSpeechSamples) {
                     (speechBuff8) in
 
-                    speechStream.write(speechBuff8, maxLength: byteSpeechSamples)
+                    speechStream.write(speechBuff8, maxLength: byteNoutSamples)
                 }
+                
+                byteNinSamples = nin * 2
             }
         }
     }
@@ -243,15 +248,15 @@ public class FreeDV {
 
     //# MARK: Receive
     
-    func rx(_ speech_out: inout [Int16], _ demod_in: [Int16]) {
+    func rx(_ speech_out: inout [Int16], _ demod_in: [Int16]) -> Int {
         let speechPtr = UnsafeMutablePointer(mutating: speech_out)
         let demodPtr = UnsafeMutablePointer(mutating: demod_in)
-        freedv_rx(instance, speechPtr, demodPtr)
+        return Int(freedv_rx(instance, speechPtr, demodPtr))
     }
 
-    func rxUnsafe(_ speechPtr: UnsafeMutablePointer<Int16>, _ demodPtr: UnsafeMutablePointer<Int16>)
+    func rxUnsafe(_ speechPtr: UnsafeMutablePointer<Int16>, _ demodPtr: UnsafeMutablePointer<Int16>) -> Int
     {
-        freedv_rx(instance, speechPtr, demodPtr)
+        return Int(freedv_rx(instance, speechPtr, demodPtr))
     }
     
     // int freedv_floatrx  (struct freedv *freedv, short speech_out[], float demod_in[]);
