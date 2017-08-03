@@ -28,15 +28,72 @@ public enum Mode: Int32 {
 public class FreeDV {
     var instance: OpaquePointer
 
-    init(_ mode: Mode) {
-        instance = freedv_open(mode.rawValue)
+    init?(_ mode: Mode) {
+        let maybeFreedvPtr = freedv_open(mode.rawValue)
+        guard let freedvPtr = maybeFreedvPtr else {
+            return nil
+        }
         
+        instance = freedvPtr
         squelch_en = 1
         snr_squelch_thresh = -100
     }
     
     func close() {
         freedv_close(instance)
+    }
+    
+    func transmit(in speechStream: InputStream, out modStream: OutputStream) {
+        // n_speech_samples and n_nom_modem_samples counts Int16, but streams require UInt8s
+        let byteSpeechSamples = self.n_speech_samples * 2
+        let byteModemSamples = self.n_nom_modem_samples * 2
+
+        let speechBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteSpeechSamples)
+        let modBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_nom_modem_samples)
+        
+        _ = speechBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_speech_samples) {
+            (speechBuff16) in
+            
+            while(speechStream.read(speechBuff8, maxLength: byteSpeechSamples) == byteSpeechSamples)
+            {
+                txUnsafe(modBuff16, speechBuff16)
+
+                _ = modBuff16.withMemoryRebound(to: UInt8.self, capacity: byteModemSamples) {
+                    (modBuff8) in
+                    
+                    modStream.write(modBuff8, maxLength: byteModemSamples)
+                }
+            }
+        }
+    }
+
+    func receive(in demodStream: InputStream, out speechStream: OutputStream) {
+        // n_speech_samples and n_nom_modem_samples counts Int16, but streams require UInt8s
+        let byteSpeechSamples = self.n_speech_samples * 2
+        let byteModemSamples = self.n_nom_modem_samples * 2
+        
+        let demodBuff8 = UnsafeMutablePointer<UInt8>.allocate(capacity: byteModemSamples)
+        let speechBuff16 = UnsafeMutablePointer<Int16>.allocate(capacity: self.n_speech_samples)
+        
+        _ = demodBuff8.withMemoryRebound(to: Int16.self, capacity: self.n_nom_modem_samples) {
+            (demodBuff16) in
+            
+            var byteNinSamples = nin * 2
+            
+            while(demodStream.read(demodBuff8, maxLength: byteNinSamples) == byteNinSamples)
+            {
+                let noutSamples = rxUnsafe(speechBuff16, demodBuff16)
+                let byteNoutSamples = noutSamples * 2
+                
+                _ = speechBuff16.withMemoryRebound(to: UInt8.self, capacity: byteSpeechSamples) {
+                    (speechBuff8) in
+
+                    speechStream.write(speechBuff8, maxLength: byteNoutSamples)
+                }
+                
+                byteNinSamples = nin * 2
+            }
+        }
     }
     
     //# MARK: Parameters
@@ -179,6 +236,11 @@ public class FreeDV {
         freedv_tx(instance, modPtr, speechPtr)
     }
     
+    func txUnsafe(_ modPtr: UnsafeMutablePointer<Int16>, _ speechPtr: UnsafeMutablePointer<Int16>)
+    {
+        freedv_tx(instance, modPtr, speechPtr)
+    }
+    
     // void freedv_comptx  (struct freedv *freedv, COMP  mod_out[], short speech_in[]);
     // void freedv_codectx (struct freedv *f, short mod_out[], unsigned char *packed_codec_bits);
     // void freedv_datatx  (struct freedv *f, short mod_out[]);
@@ -186,10 +248,15 @@ public class FreeDV {
 
     //# MARK: Receive
     
-    func rx(_ speech_out: inout [Int16], _ demod_in: [Int16]) {
+    func rx(_ speech_out: inout [Int16], _ demod_in: [Int16]) -> Int {
         let speechPtr = UnsafeMutablePointer(mutating: speech_out)
         let demodPtr = UnsafeMutablePointer(mutating: demod_in)
-        freedv_rx(instance, speechPtr, demodPtr)
+        return Int(freedv_rx(instance, speechPtr, demodPtr))
+    }
+
+    func rxUnsafe(_ speechPtr: UnsafeMutablePointer<Int16>, _ demodPtr: UnsafeMutablePointer<Int16>) -> Int
+    {
+        return Int(freedv_rx(instance, speechPtr, demodPtr))
     }
     
     // int freedv_floatrx  (struct freedv *freedv, short speech_out[], float demod_in[]);
