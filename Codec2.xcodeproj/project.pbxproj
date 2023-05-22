@@ -223,7 +223,6 @@
 		1F0CA9881F2704C900A96B12 /* codebooklspmelvq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebooklspmelvq.c; sourceTree = "<group>"; };
 		1F0CA9891F2704C900A96B12 /* codebookmel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = codebookmel.c; sourceTree = "<group>"; };
 		1F15D4081F21715200FA5515 /* Codec2.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Codec2.swift; sourceTree = "<group>"; tabWidth = 2; };
-		1F7085B11F22F218006A6288 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = module/module.modulemap; sourceTree = "<group>"; };
 		1F7D21741F214A0D00FB78C9 /* build_codec2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_codec2.sh; sourceTree = "<group>"; };
 		1FED839B1F27BBF00045698B /* FreeDV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeDV.swift; sourceTree = "<group>"; };
 		1FED839D1F27BEFE0045698B /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
@@ -852,6 +851,7 @@
 		1FEF979B1F2032DB009A3D58 /* x200_ext.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = x200_ext.wav; sourceTree = "<group>"; };
 		1FEF979C1F2032DB009A3D58 /* x200_int.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = x200_int.wav; sourceTree = "<group>"; };
 		1FEF9A921F203FEE009A3D58 /* iOS.cmake */ = {isa = PBXFileReference; fileEncoding = 1; lastKnownFileType = text; path = iOS.cmake; sourceTree = "<group>"; };
+		445BA4212A1BFB4E001A857E /* codec2_ios.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = codec2_ios.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -949,6 +949,7 @@
 		1F7085B01F22F218006A6288 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				445BA4212A1BFB4E001A857E /* codec2_ios.modulemap */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -976,7 +977,6 @@
 				1F0CA9471F2704C900A96B12 /* generated */,
 				1F7085B01F22F218006A6288 /* module */,
 				1F7D21741F214A0D00FB78C9 /* build_codec2.sh */,
-				1F7085B11F22F218006A6288 /* module.modulemap */,
 				1FEF9A911F203FEE009A3D58 /* toolchain */,
 				1FEF951C1F2032DA009A3D58 /* codec2 */,
 				1FEF95051F202CDF009A3D58 /* Codec2.h */,
