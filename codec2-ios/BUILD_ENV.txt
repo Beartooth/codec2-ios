@@ -1,0 +1,4 @@
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PWD=/Users/alishapatel/codec2-ios/codec2-ios
+SHLVL=1
+_=/usr/bin/printenv
