@@ -22,13 +22,13 @@ Pod::Spec.new do |spec|
    spec.tvos.deployment_target = "9.0"
  spec.swift_versions = '5.0'
 
-  spec.source       = { :git => "https://github.com/Beartooth/codec2-ios.git", :tag => "1.0" }
+  spec.source       = { :git => "https://github.com/Beartooth/codec2-ios.git", :tag => "2.0.0" }
 
 
  
 
   spec.source_files  = "codec2-ios", "codec2-ios/**/*.{h,swift}"
-
+  spec.module_map = "codec2-ios/module.modulemap"
  
 
 
